@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography;
@@ -19,6 +19,7 @@ namespace RockPaperScissors
             var computerStep = "";
             do
             {
+                GenerateKey();
                 computerStep = ComputerStep();
                 Console.WriteLine("HMAC: " + GenerateHMAC(computerStep));
                 DrawMenu();
@@ -37,7 +38,7 @@ namespace RockPaperScissors
             } while (playerStep != "0");
         }
 
-        public void GenerateKey()
+        private void GenerateKey()
         {
             var bytes = new byte[16];
             using (var rng = new RNGCryptoServiceProvider())
