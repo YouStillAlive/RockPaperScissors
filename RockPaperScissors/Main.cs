@@ -7,7 +7,6 @@
             RockPaperScissors TheGame = new RockPaperScissors(args);
             if (TheGame.CheckValues())
             {
-                TheGame.GenerateKey();
                 TheGame.Start();
             }
         }
